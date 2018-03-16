@@ -1,3 +1,7 @@
+import './idb';
+import './styles/index.css';
+const App = document.getElementById('app');
+
 const Greeting = () => {
   const formula = {
     text: 'Greetings',
@@ -9,7 +13,6 @@ const Greeting = () => {
     person: 'stranger'
   }
   const el = document.createElement('div');
-  console.log(text);
   el.innerHTML = (`
     ${text.text},
     ${text.person}
@@ -19,4 +22,4 @@ const Greeting = () => {
   return el;
 }
 
-document.body.appendChild(Greeting());
+App.appendChild(Greeting());

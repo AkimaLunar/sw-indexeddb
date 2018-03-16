@@ -2,9 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    sw: './src/service-worker.js',
+    app: './src/index.js'
+  },
   output: {
-    filename: 'index.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build')
   },
   devtool: 'source-map',
@@ -22,13 +25,19 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
-
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './src/index.html',
       filename: './index.html'
     })
   ]
