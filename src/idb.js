@@ -26,7 +26,10 @@ fetch('https://elated-repair.glitch.me/api/movies')
     console.log(movies[0])
 
     data.map(movie => {
-
+      return {
+        id: uuidv4(),
+        ...movie
+      }
     })
   })
   .catch(error => console.log(error));
