@@ -1,0 +1,8 @@
+{
+  "name": "sw-indexeddb",
+  "version": "1.0.0",
+  "description": "Service Worker and IndexedDB",
+  "main": "index.js",
+  "author": "Ria Carmin <ria.carmin@gmail.com>",
+  "license": "MIT"
+}
